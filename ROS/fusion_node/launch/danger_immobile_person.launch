@@ -1,0 +1,11 @@
+<launch>
+  <!-- Nodo YOLO para cámara térmica -->
+  <node name="yolo_thermal" pkg="fusion_node" type="publisher_yolo_term_interior.py" output="screen" />
+
+  <!-- Nodo YOLO para cámara USB/webcam -->
+  <node name="yolo_webcam" pkg="fusion_node" type="publisher_yolo_rgb_interior.py" output="screen" />
+
+  <!-- Nodo de fusión de detecciones y visualización -->
+  <node name="danger_node" pkg="fusion_node" type="danger_immobile_person.py" output="screen" />
+</launch>
+
