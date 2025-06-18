@@ -29,34 +29,35 @@ Se han entrenado varios modelos YOLO especializados en la detección de personas
 
 ### 🔹 Modelos para interiores
 
-- Se capturaron imágenes en el pasillo del edificio B de la Escuela Politécnica Superior (EPS), simulando tanto situaciones normales como de emergencia (personas tumbadas, sentadas trabajando o en movimiento).
+- Se capturaron imágenes en el pasillo del edificio B de la Escuela Politécnica Superior (EPS) con ambas cámaras, simulando tanto situaciones normales como de emergencia (personas tumbadas, sentadas trabajando o en movimiento).
 - Para enriquecer el modelo térmico se incorporaron 200 fragmentos de vídeo cedidos por Rafael Domínguez Sáez, así como imágenes adicionales del dataset público **[OpenThermalPose](https://github.com/IS2AI/OpenThermalPose)**, que aportan diversidad de posturas.
 - Para el modelo RGB se usaron 225 imágenes del dataset **[MPII Human Pose](http://human-pose.mpi-inf.mpg.de/)**, complementadas con 30 imágenes generadas mediante técnicas de inteligencia artificial generativa, lo que permitió cubrir situaciones no representadas en el resto del dataset.
 
 ### 🔹 Modelos para exteriores
 
-- Se utilizaron 1658 imágenes RGB y térmicas, repartidas de forma homogénea entre los modelos para cámaras térmicas y RGB.
-- La mitad de las imágenes provienen del **[FLIR ADAS Dataset](https://www.flir.com/oem/adas/dataset/)**, elegido por su compatibilidad con la cámara térmica FLIR del robot y su variedad de escenarios urbanos y de carretera bajo distintas condiciones de luz.
-- El resto se obtuvo mediante una campaña de captura de datos en el aparcamiento entre los edificios B y C de la EPS, con cámaras térmica y RGB montadas en paralelo y sincronizadas mediante ROS. Las escenas incluyen colisiones simuladas, inspecciones de motor y maniobras de aparcamiento.
+- Se utilizaron alrededor de 1700 imágenes RGB y térmicas, repartidas de forma homogénea entre los modelos para cámaras térmicas y RGB.
+- La mitad de las imágenes provienen del **[FLIR ADAS Dataset](https://www.flir.com/oem/adas/dataset/)**, elegido por su compatibilidad con la cámara térmica FLIR del robot y su variedad de escenarios urbanos y de carretera.
+- El resto se obtuvo mediante una campaña de captura de datos en el aparcamiento entre los edificios B y C de la EPS, con ambas cámaras montadas en paralelo y sincronizadas mediante ROS. Las escenas incluyen colisiones simuladas, inspecciones de motor y maniobras de aparcamiento.
 
 Todos los modelos fueron validados con métricas de precisión y visualización de resultados, disponibles en la carpeta [`MODELOS_ENTRENADOS`](./MODELOS_ENTRENADOS).
 
 ### 🔹 Modelo para nubes de puntos 3D
 
-Para el tratamiento de datos 3D obtenidos mediante el sensor LiDAR y la cámara RGB, se utilizó un modelo **PointNet** preentrenado, proporcionado por el repositorio [`learning3d`](https://github.com/vinits5/learning3d).
+Para el tratamiento de datos 3D obtenidos mediante el sensor LiDAR y la cámara RGB-D, se utilizó un modelo **PointNet** preentrenado, proporcionado por el repositorio [`learning3d`](https://github.com/vinits5/learning3d).
 
 
 ## ⚙️ Tecnologías utilizadas
 
 - Python 3.8
-- Jupyter Notebooks /Google Colab
+- Jupyter Notebooks/Google Colab
 - PyTorch
-- OpenCV
 - NumPy
 - pandas
 - scikit-learn
 - matplotlib
 - OpenCV
 - Open3D
-- ROS Melodic (compatibilidad con Ubuntu 18.04)
+- ROS Melodic (compatibilidad con Ubuntu 18.04) y sus librerías principales
+- ultralytics
+- learning3d
 ---
